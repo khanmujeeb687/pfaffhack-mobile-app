@@ -9,7 +9,7 @@ class TabTwoMid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [EventsList(title: "Upcoming events", data: events_data)],
+      children: [EventsList(title: "Previous events", data: events_data)],
     );
   }
 }

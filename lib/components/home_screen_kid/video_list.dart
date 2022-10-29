@@ -15,7 +15,10 @@ class VideoList extends StatelessWidget {
             children: List.generate(
                 videos_data.length,
                 (index) => Card(
-                        child: Container(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: Container(
                       clipBehavior: Clip.hardEdge,
                       height: 190,
                       width: 190,
