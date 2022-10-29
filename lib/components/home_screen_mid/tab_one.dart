@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfaffhack/components/events_list.dart';
+import 'package:pfaffhack/data/events_data.dart';
 import 'package:pfaffhack/data/users_data.dart';
 
 class TabOneMid extends StatelessWidget {
@@ -8,7 +9,7 @@ class TabOneMid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [EventsList(title: "Upcoming events", data: kids)],
+      children: [EventsList(title: "Upcoming events", data: events_data)],
     );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pfaffhack/models/user.dart';
+import 'package:pfaffhack/models/event.dart';
 
 class EventsList extends StatefulWidget {
   final String title;
-  final List<User> data;
+  final List<Event> data;
   final VoidCallback? onItemClick;
   const EventsList(
       {required this.title, required this.data, this.onItemClick, super.key});
@@ -41,11 +41,10 @@ class _UsersListState extends State<EventsList> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(25)),
                         leading: CircleAvatar(
-                          backgroundImage:
-                              NetworkImage(widget.data[index].profileUrl!),
+                          child: Icon(widget.data[index].iconData),
                         ),
-                        title: Text(widget.data[index].fullName!),
-                        subtitle: Text(widget.data[index].email!),
+                        title: Text(widget.data[index].title!),
+                        subtitle: Text(widget.data[index].venue!),
                       ),
                     ))
           ]),

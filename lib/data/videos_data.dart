@@ -1,4 +1,4 @@
-import 'package:pfaffhack/models/videos.dart';
+import 'package:pfaffhack/models/video.dart';
 
 List<Video> videos_data = [
   Video(
