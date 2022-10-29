@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfaffhack/components/button.dart';
+import 'package:pfaffhack/components/home_screen_old/greeting_card.dart';
 import 'package:pfaffhack/components/home_screen_old/next_event.dart';
 import 'package:pfaffhack/components/home_screen_old/tab_one.dart';
 import 'package:pfaffhack/components/home_screen_old/tab_two.dart';
@@ -48,6 +49,8 @@ class _HomeScreenOldState extends State<HomeScreenOld> {
               const SizedBox(
                 height: 50,
               ),
+              const GreetingCard(),
+              const SizedBox(height: 50),
               if (currentTab == 0) const TabOneOld(),
               if (currentTab == 1) const TabTwoOld(),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:pfaffhack/components/users_list.dart';
+import 'package:pfaffhack/components/events_list.dart';
+import 'package:pfaffhack/data/users_data.dart';
 
 class TabOneMid extends StatelessWidget {
   const TabOneMid({super.key});
@@ -7,9 +8,7 @@ class TabOneMid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        const UsersList(title: "Upcoming Events"),
-      ],
+      children: [EventsList(title: "Upcoming events", data: kids)],
     );
   }
 }

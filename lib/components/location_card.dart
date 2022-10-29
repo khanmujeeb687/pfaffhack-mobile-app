@@ -6,10 +6,10 @@ class LocationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(top: 20),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
-          color: const Color(0XffE8E8E8),
-          borderRadius: BorderRadius.circular(35)),
+          color: Colors.grey.shade100, borderRadius: BorderRadius.circular(35)),
       child: Row(children: const [
         Icon(Icons.my_location),
         SizedBox(

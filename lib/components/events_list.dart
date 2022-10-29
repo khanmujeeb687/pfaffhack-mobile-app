@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:pfaffhack/models/user.dart';
 
-class UsersList extends StatefulWidget {
+class EventsList extends StatefulWidget {
   final String title;
   final List<User> data;
   final VoidCallback? onItemClick;
-  const UsersList(
+  const EventsList(
       {required this.title, required this.data, this.onItemClick, super.key});
 
   @override
-  State<UsersList> createState() => _UsersListState();
+  State<EventsList> createState() => _UsersListState();
 }
 
-class _UsersListState extends State<UsersList> {
+class _UsersListState extends State<EventsList> {
   @override
   Widget build(BuildContext context) {
     return Container(

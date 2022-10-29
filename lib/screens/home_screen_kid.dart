@@ -28,10 +28,10 @@ class _HomeScreenKidState extends State<HomeScreenKid> {
                   "assets/coin.png",
                   height: 20,
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 6,
                 ),
-                Text("150")
+                const Text("150")
               ],
             ),
           )
@@ -76,8 +76,8 @@ class _HomeScreenKidState extends State<HomeScreenKid> {
             const SizedBox(
               height: 30,
             ),
-            if (currentTab == 0) TabOneKid(),
-            if (currentTab == 1) TabTwoKid()
+            if (currentTab == 0) const TabOneKid(),
+            if (currentTab == 1) const TabTwoKid()
           ]),
         ),
       ),

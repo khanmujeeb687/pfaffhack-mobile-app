@@ -37,6 +37,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   chips_input: ^0.1.0
+  flutter_rating_bar: ^4.0.1
+
 
 
 
@@ -64,7 +66,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-     - assets/coin.png
+     - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

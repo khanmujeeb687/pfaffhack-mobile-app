@@ -1,6 +1,6 @@
 import 'package:pfaffhack/models/user.dart';
 
-List<User> login_users = [
+List<User> fighters = [
   User(
       id: 2222,
       email: "fighter1@gmail.com",
@@ -10,7 +10,7 @@ List<User> login_users = [
       isOld: true,
       password: "fighter1",
       profileUrl:
-          "https://image.shutterstock.com/image-photo/portrait-very-old-woman-retired-600w-1132591781.jpg"),
+          "https://i.pinimg.com/originals/43/42/22/434222ff5e7442e0a83f66205c38ed08.jpg"),
   User(
       id: 2222,
       email: "fighter2@gmail.com",
@@ -20,7 +20,7 @@ List<User> login_users = [
       isOld: true,
       password: "fighter2",
       profileUrl:
-          "https://image.shutterstock.com/image-photo/portrait-very-old-woman-retired-600w-1132591781.jpg"),
+          "https://i.pinimg.com/originals/a2/83/9c/a2839ce8cf399571fb52b273247e6fcf.png"),
   User(
       id: 2222,
       email: "fighter3@gmail.com",
@@ -79,7 +79,7 @@ List<User> kids = [
       isOld: false,
       password: "kid1",
       profileUrl:
-          "https://thumbs.dreamstime.com/z/happy-black-teen-boy-outside-african-american-smiles-sitting-bench-192130399.jpg"),
+          "https://www.nicepng.com/png/full/14-140945_download-african-american-teen-thinking.png"),
   User(
       id: 002,
       email: "kid2@gmail.com",
@@ -99,5 +99,5 @@ List<User> kids = [
       isOld: false,
       password: "kid3",
       profileUrl:
-          "https://thumbs.dreamstime.com/z/happy-black-teen-boy-outside-african-american-smiles-sitting-bench-192130399.jpg"),
+          "https://www.hottesthaircuts.com/wp-content/uploads/2018/03/teenage-girl-with-long-brown-hair.jpg"),
 ];

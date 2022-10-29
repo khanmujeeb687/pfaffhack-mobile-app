@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pfaffhack/components/users_list.dart';
+import 'package:pfaffhack/data/users_data.dart';
 
 class TabTwoKid extends StatelessWidget {
   const TabTwoKid({super.key});
@@ -8,7 +9,10 @@ class TabTwoKid extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const UsersList(title: "Old Appointments"),
+        UsersList(
+          title: "Old Appointments",
+          data: fighters,
+        ),
       ],
     );
   }

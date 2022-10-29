@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pfaffhack/components/bottomsheets/confirm_bottom_sheet.dart';
 import 'package:pfaffhack/components/button.dart';
 
 class NextEventCard extends StatelessWidget {
@@ -7,6 +8,9 @@ class NextEventCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          color: Colors.grey.shade100, borderRadius: BorderRadius.circular(25)),
+      padding: EdgeInsets.all(15),
       alignment: Alignment.center,
       child: ListTile(
         leading: const CircleAvatar(
@@ -14,7 +18,7 @@ class NextEventCard extends StatelessWidget {
               "https://as2.ftcdn.net/v2/jpg/03/24/31/95/1000_F_324319518_WiZhxutSbnSUvE05LN4RPtVE9SJgoDVB.jpg"),
         ),
         title: const Text(
-          "Good time with Vrajesh",
+          "Walk with Vrajesh",
           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
         ),
         subtitle: Column(
@@ -25,7 +29,11 @@ class NextEventCard extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            Button(title: "Cancel Event", onTap: () => {})
+            Button(
+                title: "Cancel Event",
+                onTap: () {
+                  showConfirmationSheet(context);
+                })
           ],
         ),
       ),
