@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:pfaffhack/components/button.dart';
+import 'package:pfaffhack/screens/home_screen_kid.dart';
+import 'package:pfaffhack/screens/home_screen_mid.dart';
+import 'package:pfaffhack/screens/home_screen_old.dart';
 import 'package:pfaffhack/screens/register.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -10,6 +14,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<LoginScreen> {
+  String email = '';
+  String password = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,29 +33,45 @@ class _MyHomePageState extends State<LoginScreen> {
                 style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
-              const TextField(
+              TextField(
+                onChanged: (q) {
+                  email = q;
+                },
                 decoration: InputDecoration(hintText: "Email Id"),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
-              const TextField(
+              TextField(
+                onChanged: (q) {
+                  password = q;
+                },
+                obscureText: true,
                 decoration: InputDecoration(hintText: "Password"),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
-              Row(
-                children: [
-                  Expanded(
-                      child: ElevatedButton(
-                          onPressed: () {}, child: const Text("Log In"))),
-                ],
-              ),
+              Button(
+                  title: "Log In",
+                  onTap: () {
+                    if (email.isNotEmpty && password.isNotEmpty) {
+                      Widget? nextScreen;
+                      if (email.toLowerCase().contains("mid")) {
+                        nextScreen = HomeScreenMid();
+                      } else if (email.toLowerCase().contains("kid")) {
+                        nextScreen = HomeScreenKid();
+                      } else if (email.toLowerCase().contains("fighter")) {
+                        nextScreen = HomeScreenOld();
+                      }
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (_) => nextScreen!));
+                    }
+                  }),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -59,7 +81,7 @@ class _MyHomePageState extends State<LoginScreen> {
                     'Not a user? ',
                   ),
                   InkWell(
-                    onTap: () => Navigator.push(context,
+                    onTap: () => Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (_) => RegisterScreen())),
                     child: const Text(
                       'Sign Up',

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:pfaffhack/components/button.dart';
 import 'package:pfaffhack/screens/additional_details.dart';
+import 'package:pfaffhack/screens/home_screen_kid.dart';
+import 'package:pfaffhack/screens/home_screen_mid.dart';
+import 'package:pfaffhack/screens/home_screen_old.dart';
+import 'package:pfaffhack/screens/login.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -9,6 +14,7 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterState extends State<RegisterScreen> {
+  String email = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,43 +27,55 @@ class _RegisterState extends State<RegisterScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const TextField(
-                decoration: InputDecoration(hintText: "Email Id"),
+              TextField(
+                onChanged: (a) {
+                  email = a;
+                },
+                decoration: const InputDecoration(hintText: "Email Id"),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               const TextField(
+                obscureText: true,
                 decoration: InputDecoration(hintText: "Password"),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               const TextField(
+                obscureText: true,
                 decoration: InputDecoration(hintText: "Confirm Password"),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               const TextField(
                 decoration: InputDecoration(hintText: "Enter Unique ID"),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
-              Row(
-                children: [
-                  Expanded(
-                      child: ElevatedButton(
-                          onPressed: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (_) => AdditionalDetails())),
-                          child: const Text("Continue"))),
-                ],
-              ),
+              Button(
+                  title: "Continue",
+                  onTap: () => Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (_) {
+                        Widget nextScreen = const RegisterScreen();
+                        if (email.isNotEmpty) {
+                          if (email.toLowerCase().contains("mid")) {
+                            nextScreen =
+                                const AdditionalDetailsScreen(isMid: true);
+                          } else if (email.toLowerCase().contains("kid")) {
+                            nextScreen = const HomeScreenKid();
+                          } else if (email.toLowerCase().contains("fighter")) {
+                            nextScreen =
+                                const AdditionalDetailsScreen(isOld: true);
+                          }
+                        }
+                        return nextScreen;
+                      }))),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +85,10 @@ class _RegisterState extends State<RegisterScreen> {
                     'Already a user? ',
                   ),
                   InkWell(
-                    onTap: () => Navigator.pop(context),
+                    onTap: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => LoginScreen(title: "Pfaff Hack"))),
                     child: const Text(
                       'Log In',
                       style: TextStyle(color: Colors.blue),
