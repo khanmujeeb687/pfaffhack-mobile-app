@@ -41,24 +41,24 @@ class _MyHomePageState extends State<LoginScreen> {
                 height: 20,
               ),
               Button(
-                  title: "Log In as Artist",
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_) => const HomeScreenMid()));
-                  }),
-
-              const SizedBox(
-                height: 20,
-              ),
-              Button(
                   title: "Log In as Fighter",
                   onTap: () {
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
                             builder: (_) => const HomeScreenOld()));
+                  }),
+
+              const SizedBox(
+                height: 20,
+              ),
+              Button(
+                  title: "Log In as Artist",
+                  onTap: () {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => const HomeScreenMid()));
                   }),
 
               const SizedBox(

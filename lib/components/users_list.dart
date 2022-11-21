@@ -24,17 +24,18 @@ class _UsersListState extends State<UsersList> {
               children: [
                 Text(
                   widget.title,
-                  style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.w500, fontSize: 20),
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             ...List.generate(
                 widget.data.length,
                 (index) => Container(
-                      margin: EdgeInsets.symmetric(vertical: 3),
+                      margin: const EdgeInsets.symmetric(vertical: 3),
                       child: ListTile(
                         onTap: widget.onItemClick,
                         tileColor: const Color(0XffF0F0F0),
